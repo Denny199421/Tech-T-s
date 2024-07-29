@@ -1,17 +1,29 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <body>
 <?php
-function calculateTriangleArea($base, $height) {
-// Calculate the area
-$area = ($base * $height) / 2;
-return $area;
+function findSingleNumber($arr) {
+$numCounts = array();
+// Count the occurrences of each number
+foreach ($arr as $num) {
+if (isset($numCounts[$num])) {
+$numCounts[$num]++;
+} else {
+$numCounts[$num] = 1;
 }
-// Example usage:
-$base = 5;
-$height = 10;
-$area = calculateTriangleArea($base, $height);
-echo "The area of the triangle is: " . $area;
+}
+// Find the number that occurs only once
+foreach ($numCounts as $num => $count) {
+if ($count == 1) {
+return $num;
+}
+}
+return null; // Return null if no single number is found
+}
+// Input sample array
+$inputArray = array(5, 3, 4, 3, 4);
+$singleNumber = findSingleNumber($inputArray);
+echo "The single number in the array is: " . $singleNumber;
 ?>
 <body>
 </html>
