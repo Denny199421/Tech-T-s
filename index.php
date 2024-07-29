@@ -1,15 +1,17 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <body>
 <?php
 function calculateTriangleArea($base, $height) {
-    return ($base * $height) / 2;
+// Calculate the area
+$area = ($base * $height) / 2;
+return $area;
 }
-
 // Example usage:
 $base = 5;
 $height = 10;
-echo "The area of the triangle is: " . calculateTriangleArea($base, $height);
+$area = calculateTriangleArea($base, $height);
+echo "The area of the triangle is: " . $area;
 ?>
-</body>
+<body>
 </html>
